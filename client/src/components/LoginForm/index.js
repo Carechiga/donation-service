@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Message } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { LOGIN } from '../../utils/mutations';
@@ -89,9 +89,10 @@ const LoginForm = () => {
             />
         </Form.Field>
         {errorMessage && (
-						<div>
-							<p className="error-text" style={{margin: "0px 0px 10px 0px", border: "solid", backgroundColor: "#fa87b5", borderRadius: "5px", height: "40px", color: "red", fontWeight: "bold"}}>{errorMessage}</p>
-						</div>
+						<Message negative>
+              <Message.Header>Login Failed</Message.Header>
+							<p>{errorMessage}</p>
+						</Message>
 					)}
         
         <Button color='blue' type='submit'>Submit</Button>

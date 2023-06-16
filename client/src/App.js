@@ -15,7 +15,7 @@ import CharityPage from './pages/CharityPage';
 import About from './pages/About'
 import Donation from './pages/Donation';
 
-import { HashRouter as Router , Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router , Routes, Route, Navigate } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,

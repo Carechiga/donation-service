@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Message, MessageHeader } from 'semantic-ui-react'
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations'; 
@@ -160,9 +160,10 @@ return (
       <Checkbox label='I agree to the Terms and Conditions' />
     </Form.Field>
     {errorMessage && (
-						<div>
-							<p className="error-text" style={{margin: "0px 0px 10px 0px", border: "solid", backgroundColor: "#fa87b5", borderRadius: "5px", height: "40px", color: "red", fontWeight: "bold"}}>{errorMessage}</p>
-						</div>
+						<Message negative>
+              <Message.Header>Signup Failed</Message.Header>
+							<p>{errorMessage}</p>
+						</Message>
 					)}
     <div style={{ textAlign:'center' }}> <Button type='submit'>Submit</Button></div>
   </Form>
